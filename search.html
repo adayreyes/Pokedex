@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+
+<body onload="load()">
+    <header class="header">
+        <img class="star" src="./img/pokeball.png" alt="">
+        <h1 id="title">Pokedex</h1>
+        <nav class="main-nav">
+            <div class="link-container">
+                <a href="./index.html">Home</a>
+                <div class="slider"></div>
+            </div>
+            <div class="link-container">
+                <a href="./search.html">Search</a>
+                <div class="slider"></div>
+            </div>
+            <div class="link-container">
+                <a href="#">Explore</a>
+                <div class="slider"></div>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="search-section" id="search-section">
+            <div class="input-container">
+                <input placeholder="Pokemon name" onkeyup="enter(event)" type="text" id="input">
+                <button onclick="getPokemon()">GO!</button>
+            </div>
+            <div id="big-card" class="big-card">
+                <header id="card-header">
+                    <div class="header-text">
+                        <span>Pokedex</span>
+                        <a href="#favorites-section"><img id="favorite" onclick="initFavorites()" src="./img/favorite1.ico" alt=""></a>
+                        <div>#<span id="pokemon-id">66</span></div>
+                    </div>
+                    <img id="pokemon-image"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/37.png"
+                        alt="">
+                </header>
+                <section class="main-info">
+                    <h3 id="pokemon-name">Vulpix</h3>
+                    <div id="pokemon-type-container"><span id="pokemon-type">Fire</span></div>
+                    <div class="pokemon-body-info">
+                        <div class="weight">
+                            <div><span class="weight-number" id="pokemon-weight">95</span> kg</div>
+                            <span class="weight-text">Weight</span>
+                        </div>
+                        <div class="height">
+                            <div><span class="height-number" id="pokemon-height">1.7</span> m</div>
+                            <span class="height-text">Height</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="statistics-section">
+                    <h2>Statistics</h2>
+                    <div class="info-container" id="info-container">
+                    </div>
+                </section>
+        </section>
+        <section class="d-none favorites-section" id="favorites-section">
+            <h2 class="favorites-title">Favorites</h2>
+            <div class="favorites-container" id="favorites-container"></div>
+        </section>
+    </main>
+    <footer>
+        <p>©Developer Akademie 2022</p>
+        <p>Pokemon icons by <a href="http://www.icons8.com" target="_blank" style="color:rgb(0, 175, 228)"> www.icons8.com</a></p>
+    </footer>
+</body>
+
+</html>

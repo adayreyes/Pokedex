@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+}
 
 html{
     scroll-behavior: smooth;
@@ -13,29 +16,79 @@ body{
     background-size: cover;
     background-position: center;  
 }
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    height: 100px;
+}
+.star{
+    width: 60px;
+    height: 60px;
+}
+.main-nav{
+    display: flex;
+    gap: 2rem;
+    margin-right: 2rem;
+    text-shadow: 1px 1px 1px #000000,
+    1px 2px 1px #000000,
+    1px 3px 1px #575555,
+1px 18px 6px rgba(16,16,16,0.4),
+1px 22px 10px rgba(16,16,16,0.2),
+1px 25px 35px rgba(16,16,16,0.2),
+1px 30px 60px rgba(16,16,16,0.4);
+    
+    
+}
+.link-container{
+    position: relative;
+    padding-bottom: .3rem;
+    cursor: pointer;
+}
+.main-nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+    border-bottom: 2px solid transparent;
+    transition: all 100ms ease-in-out;
+}
+.slider{
+    background-color: white;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    transition: width 220ms ease-in-out;
+}
 
+.main-nav .link-container:hover .slider{
+    width: 100%;
+}
 h2{
     text-align: center;
     padding-top: 0.5rem;
 }
 h1{
+    font-size: 4rem;
+    margin-left: 8rem;
     padding-top: 1.5rem;
     padding: .5rem 0.4rem;
-    color: #FCC801;
-    text-shadow: 1px 1px 1px #ee3a3a,
-    1px 2px 1px #ee3a3a,
-    1px 3px 1px #ee3a3a,
-    1px 4px 1px #ee3a3a,
-    1px 5px 1px #ee3a3a,
-    1px 6px 1px #ee3a3a,
-    1px 7px 1px #ee3a3a,
-    1px 8px 1px #ee3a3a,
-    1px 9px 1px #ee3a3a,
-    1px 10px 1px #ee3a3a,
-1px 16px 6px rgba(16,16,16,0.4),
-1px 20px 10px rgba(16,16,16,0.2),
-1px 23px 35px rgba(16,16,16,0.2),
-1px 28px 60px rgba(16,16,16,0.4);
+    color: #f30303;
+    text-shadow: 1px 1px 1px #fbff00,
+    1px 2px 1px #f3e300,
+    1px 3px 1px #000000,
+    1px 4px 1px #000000,
+    1px 5px 1px #000000,
+    1px 6px 1px #000000,
+    1px 7px 1px #000000,
+    1px 8px 1px #000000,
+    1px 9px 1px #000000,
+    1px 10px 1px #000000,
+1px 18px 6px rgba(16,16,16,0.4),
+1px 22px 10px rgba(16,16,16,0.2),
+1px 25px 35px rgba(16,16,16,0.2),
+1px 30px 60px rgba(16,16,16,0.4);
 }
 
 input{
@@ -244,24 +297,6 @@ button{
     align-items: center;
     justify-content: center;
     
-}
-.up-arrow{
-    width: 60px;
-    object-fit: cover;
-    position: fixed;
-    top: .5rem;
-    right: .5rem;
-    z-index: 2;
-    
-}
-.star{
-    width: 60px;
-    object-fit: cover;
-    bottom: .5rem;
-    right: .5rem;
-    position: fixed;
-    z-index: 2;
-   
 }
 
 #favorite:hover{

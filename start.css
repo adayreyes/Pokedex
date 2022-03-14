@@ -1,0 +1,58 @@
+
+.start-main{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    gap:15%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.start-card{
+    width: 350px;    
+    height: 350px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
+.start-card span{
+    font-weight: bold;    
+}
+
+.start-card:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+    
+}
+.search-card{
+    background-image: url(./img/pikachu-g7a9e7e434_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    color: black;
+    text-shadow: 1px 1px 1px #ffffff,
+    1px 2px 1px #ffffff,
+    1px 3px 1px #000000,
+1px 18px 6px rgba(16,16,16,0.4),
+1px 22px 10px rgba(16,16,16,0.2),
+1px 25px 35px rgba(16,16,16,0.2),
+1px 30px 60px rgba(16,16,16,0.4);
+    
+}
+.explore-card{
+    background-image: url(./img/explore.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 1px #000000,
+    1px 2px 1px #000000,
+    1px 3px 1px #ffffff,
+1px 18px 6px rgba(16,16,16,0.4),
+1px 22px 10px rgba(16,16,16,0.2),
+1px 25px 35px rgba(16,16,16,0.2),
+1px 30px 60px rgba(16,16,16,0.4);
+    
+}
