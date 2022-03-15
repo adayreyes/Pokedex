@@ -5,29 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/explore.css">
     <script src="./js/script.js"></script>
+    <script src="./js/explore.js"></script>
 </head>
-
-<body onload="start()">
+<body onload="startExplore()">
     <header w3-include-html="./templates/header.html" class="header"></header>
     <main>
-        <section class="search-section" id="search-section">
-            <div class="input-container">
-                <input placeholder="Pokemon name" onkeyup="enter(event)" type="text" id="input">
-                <img class="go" onclick="getPokemon()" src="./img/go.png" alt="">
-            </div>
-            <div id="big-card" class="big-card">
+        <section class="buttons-container">
+            <button type="button " id="base-button" onclick="renderBasePokemons()" class="button hover">Base Pokemons</button>
+            <button type="button" id="special-button" onclick="renderSpecialPokemons()" class="button hover">Special Pokemons</button>
+        </section>
+        <section class="list-container" id="list-container"></section>
+        <section class="more-pokemons-section">
+            <button type="button" class="button more-button hover d-none" id="more-button" onclick="morePokemons()">More</button>
+        </section>
+        <section class="d-none favorites-section" id="favorites-section">
+            <h2 class="favorites-title">Favorites</h2>
+            <div class="favorites-container" id="favorites-container"></div>
+        </section>
+        <div class="full-screen-container"  id="full-screen-container">
+            <img class="close" onclick="endFullScreen()" src="./img/close.png" alt="">
+            <div id="big-card" style="z-index: 99;" class="big-card full-card">
                 <header id="card-header">
                     <div class="header-text">
                         <span>Pokedex</span>
-                        <a href="#favorites-section"><img id="favorite" onclick="initFavorites()" src="./img/favorite1.ico" alt=""></a>
+                        <a><img id="favorite" onclick="initFavoritesExplore()" src="./img/favorite1.ico" alt=""></a>
                         <div>#<span id="pokemon-id">66</span></div>
                     </div>
                     <img id="pokemon-image"
@@ -54,13 +58,8 @@
                     </div>
                 </section>
             </div>
-        </section>
-        <section class="d-none favorites-section" id="favorites-section">
-            <h2 class="favorites-title">Favorites</h2>
-            <div class="favorites-container" id="favorites-container"></div>
-        </section>
+        </div>
     </main>
     <footer w3-include-html="./templates/footer.html"></footer>
 </body>
-
 </html>

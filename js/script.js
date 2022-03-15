@@ -39,18 +39,35 @@ function getPokemon(){
 }
 
 async function getResponse(poke){
+    await getResponseAsJson(poke);
+    checkPokemon();
+}
+async function getResponseAsJson(poke){
     let url = `https://pokeapi.co/api/v2/pokemon/${poke}`;
     let response = await fetch(url);
-    responseAsJson = await response.json();
-    setAllValues();
-    showBigCard();
-    window.scrollTo(top);
+    if(response["ok"] == true){
+        responseAsJson = await response.json();
+    } else{
+        responseAsJson = null
+    }
+    
+
+}
+
+function checkPokemon(){
+    if(responseAsJson){
+        setAllValues();
+        showBigCard();
+    } else{
+        alert("I couldn't find that Pokemon :(")
+    }
 }
 
 function setAllValues(){
     setAllInfo();
     setAllStats();
 }
+
 
 
 function setAllInfo(){
@@ -247,15 +264,25 @@ function setBackgroundSmall(i){
 }
 
 function smallCardTemplate(i){
-    return `<div class="small-card" onclick="getResponse('${favorites[i]["name"]}')" id="small-card(${i})">
+    return `<div class="small-card" onclick="showFavorite('${favorites[i]["name"]}')" id="small-card(${i})">
     <img id="small-pokemon-image(${i})" src="${favorites[i]["img"]}" alt="">
     <p id="small-pokemon-name(${i})">${favorites[i]["edited_name"]}</p>
     </div>`
 }
 
+async function showFavorite(id){
+    await getResponse(id);
+    window.scrollTo(top); 
+}
+
 function save(){
     let favorites_text = JSON.stringify(favorites);
     localStorage.setItem("favorites",favorites_text);
+}
+
+function start(){
+    load();
+    includeHTML();
 }
 
 function load(){
@@ -272,3 +299,30 @@ function load(){
     }
 }
 
+function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      file = elmnt.getAttribute("w3-include-html");
+      if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("w3-include-html");
+            includeHTML();
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+      }
+    }
+  }

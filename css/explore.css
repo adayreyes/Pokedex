@@ -1,0 +1,82 @@
+:root{
+    --fire: #f08030be;
+    --normal:#A8A878be ;
+    --water:#6890F0be ;
+    --bug:#A8B820be ;
+    --grass:#78C850be ;
+    --electric:#F8D030be ;
+    --ice:#98D8D8be ;
+    --fighting:#C03028be ;
+    --poison:#A040A0be ;
+    --ground:#E0C068be ;
+    --flying:#A890F0be;
+    --psychic:#F85888be ;
+    --rock:#B8A038be ;
+    --ghost:#705898be ;
+    --dark:#705848be ;
+    --dragon:#7038F8be ;
+    --steel:#B8B8D0be ;
+    --fairy:#F0B6BCbe ;
+
+}
+main{
+
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+.list-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.buttons-container{
+    display: flex;
+    gap: 1rem;
+    height: max-content;
+}
+.full-screen-container{
+    position: fixed;
+    display: none;
+    top:0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(173, 216, 230, 0.596);
+}
+.close{
+    cursor: pointer;
+}
+.more{
+    width: 200px;
+}
+
+
+@media(max-width:350px){
+    .statistics-container{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+        
+    }
+    h1{
+        text-align: center;
+    }
+    .statistics-container span{
+        margin: .3rem 0;
+    }
+    .progress-bar-container{
+        width: 95%;
+        height: 30px;
+    }
+    .search-section{
+        padding: 0 .1rem;
+    }
+}

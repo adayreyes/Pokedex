@@ -12,7 +12,7 @@ html{
 }
 body{
     font-family:'Lato', sans-serif;
-    background-image: url(../img/background2.png);
+    background-image: url(../img/background3.jpg);
     background-size: cover;
     background-position: center;  
 }
@@ -79,10 +79,11 @@ body{
     font-size: 1.5rem;
     border-bottom: 2px solid transparent;
     transition: all 100ms ease-in-out;
+    font-weight: 600;
 }
 .slider{
     background-color: white;
-    height: 2px;
+    height: 3px;
     position: absolute;
     bottom: 0;
     width: 0%;
@@ -130,6 +131,23 @@ input{
 }
 input:focus{
     background-color: #0316a500;
+}
+
+.button{
+    padding: .3rem;
+    background-color: rgb(255, 56, 56);
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
+
+.hover:hover{
+    transform: scale(1.05);
+    background-color: red;
 }
 
 .big-card{
@@ -269,6 +287,21 @@ input:focus{
     justify-content: center;
     
 }
+.small-card{
+    margin: 3rem;
+    max-width: 300px;
+    max-height: 300px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: transform 100ms ease-in-out;
+    border: 4px solid rgb(44, 42, 42);
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+
+}
 
 .hp{
     width: 20%;
@@ -306,21 +339,6 @@ input:focus{
 }
 
 
-.small-card{
-    margin: 3rem;
-    max-width: 300px;
-    max-height: 300px;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: white;
-    cursor: pointer;
-    transition: transform 100ms ease-in-out;
-    border: 4px solid #0315A5;
-    box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
-
-}
 
 
 .bg-fire{
@@ -405,6 +423,42 @@ input:focus{
 .small-card:hover{
     transform: scale(1.05);
 }
+.favorites-section{
+    text-align: center;   
+
+}
+.favorites-title{
+    
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #f30303;
+    text-shadow: 1px 1px 1px #fbff00,
+    1px 2px 1px #f3e300,
+    1px 3px 1px #000000,
+    1px 4px 1px #000000,
+    1px 5px 1px #000000,
+    1px 6px 1px #000000,
+    1px 7px 1px #000000,
+    1px 8px 1px #000000,
+    1px 9px 1px #000000,
+    1px 10px 1px #000000,
+1px 18px 6px rgba(16,16,16,0.4),
+1px 22px 10px rgba(16,16,16,0.2),
+1px 25px 35px rgba(16,16,16,0.2),
+1px 30px 60px rgba(16,16,16,0.4);
+}
+.favorites-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.more-button{
+   padding: 1rem 2rem;
+}
 
 .d-none{
     display: none;
@@ -420,36 +474,38 @@ footer{
     color: white;
     height: 150px;
 }
-
-@media(max-width:350px){
-    .statistics-container{
-        flex-direction: column;
-        align-items: center;
-        margin-top: 0;
-        
-    }
-    h1{
-        text-align: center;
-    }
-    .statistics-container span{
-        margin: .3rem 0;
-    }
-    .progress-bar-container{
-        width: 95%;
-        height: 30px;
-    }
-    .search-section{
-        padding: 0 .1rem;
-    }
-}
 @media(max-width:450px){
     .favorites-title{
         font-size: 2.5rem;
     }
 }
-@media(max-height:800px){
-    .search-section{
-        height: auto;
+
+@media(max-width:400px){
+    h1{
+        font-size: 3rem;
+    }
+    .main-nav{
+        gap: 1rem;
+    }
+}
+
+@media(max-width:800px){
+    .header{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+        gap: .5rem;
+    }
+    .main-nav{
+        margin: 0;
+    }
+    h1{
+        margin: 0;
     }
     
+}
+@media(max-width:1000px){
+    .pokeballs-container{
+        display: none;
+    }
 }
