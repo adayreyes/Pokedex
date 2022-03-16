@@ -50,8 +50,6 @@ async function getResponseAsJson(poke){
     } else{
         responseAsJson = null
     }
-    
-
 }
 
 function checkPokemon(){
@@ -67,8 +65,6 @@ function setAllValues(){
     setAllInfo();
     setAllStats();
 }
-
-
 
 function setAllInfo(){
     pokemon_name = responseAsJson["name"];
@@ -130,8 +126,6 @@ function setRightIcon(bool,favorite_icon){
     }
 }
 
-
-
 function writeHeader(){
     getById("pokemon-image").src = img;
     writeInHTML("pokemon-id",pokemon_id);
@@ -150,7 +144,6 @@ function setBackground(id){
     element.className = "";
     element.classList.add(`bg-${type}`);
 }
-
 
 function setWeightAndHeight(){
     writeInHTML("pokemon-weight",weight);

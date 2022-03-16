@@ -43,6 +43,7 @@ main{
 .full-screen-container{
     position: fixed;
     display: none;
+    overflow: auto;
     top:0;
     flex-direction: column;
     justify-content: center;
@@ -53,6 +54,12 @@ main{
 }
 .close{
     cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 65px;
+    
 }
 .more{
     width: 200px;

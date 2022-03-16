@@ -26,15 +26,14 @@
             <div class="favorites-container" id="favorites-container"></div>
         </section>
         <div class="full-screen-container"  id="full-screen-container">
-            <img class="close" onclick="endFullScreen()" src="./img/close.png" alt="">
             <div id="big-card" style="z-index: 99;" class="big-card full-card">
                 <header id="card-header">
+                    <img class="close" onclick="endFullScreen()" src="./img/close.png" alt="">
                     <div class="header-text">
-                        <span>Pokedex</span>
                         <a><img id="favorite" onclick="initFavoritesExplore()" src="./img/favorite1.ico" alt=""></a>
                         <div>#<span id="pokemon-id">66</span></div>
                     </div>
-                    <img id="pokemon-image"
+                    <img class="pokemon-img" id="pokemon-image"
                         src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/37.png"
                         alt="">
                 </header>

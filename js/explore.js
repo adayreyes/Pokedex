@@ -3,8 +3,6 @@ let special_end = 10228;
 let pokemon_end = 899;
 let count = 1;
 
-
-
 async function renderBasePokemons(){
     count = 1;
     if(!getById("list-card(1)")){
@@ -127,14 +125,13 @@ function editFullContainer(){
     container.style.backgroundColor = `var(--${responseAsJson["types"][0]["type"]["name"]})`
 
 }
+
 function smallCardTemplateExplore(i){
     return `<div class="small-card" onclick="showFullCard('${favorites[i]["name"]}')" id="small-card(${i})">
     <img id="small-pokemon-image(${i})" src="${favorites[i]["img"]}" alt="">
     <p id="small-pokemon-name(${i})">${favorites[i]["edited_name"]}</p>
     </div>`
 }
-
-
 
 function endFullScreen(){
     getById("full-screen-container").style.display = "none"
@@ -196,7 +193,6 @@ function editSpecialRendering(){
     disableButton("special-button");
     enableButton("base-button");
     getById("more-button").classList.remove("d-none");
-
 }
 
 function checkImage(i){

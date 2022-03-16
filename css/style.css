@@ -153,6 +153,7 @@ input:focus{
 .big-card{
     max-width: 400px;
     display: flex ;
+    height: 100%;
     flex-direction: column;
     align-items: center; 
     border-radius: 5px;
@@ -199,7 +200,8 @@ input:focus{
     justify-content: space-between;
     
 }
-.big-card header img{
+
+.big-card header .pokemon-img{
     width: 60%;
 }
 #favorite{
