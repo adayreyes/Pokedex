@@ -13,21 +13,24 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/search.css">
     <script src="./js/script.js"></script>
+    <script src="./js/search.js"></script>
 </head>
 
 <body onload="start()">
     <header w3-include-html="./templates/header.html" class="header"></header>
     <main>
-        <section class="search-section" id="search-section">
-            <div class="input-container">
+        <section class="search-section" id="search-section">   
+        <form autocomplete="off" action="/action_page.php">
+            <div class="autocomplete input-container" style="width:300px;">
                 <input placeholder="Pokemon name" onkeyup="enter(event)" type="text" id="input">
                 <img class="go" onclick="getPokemon()" src="./img/go.png" alt="">
             </div>
+        </form>
             <div id="big-card" class="big-card">
                 <header id="card-header">
                     <div class="header-text">
                         <span>Pokedex</span>
-                        <a href="#favorites-section"><img id="favorite" onclick="initFavorites()" src="./img/favorite1.ico" alt=""></a>
+                        <a><img id="favorite" onclick="initFavorites()" src="./img/favorite1.ico" alt=""></a>
                         <div>#<span id="pokemon-id">66</span></div>
                     </div>
                     <img class="pokemon-img" id="pokemon-image"

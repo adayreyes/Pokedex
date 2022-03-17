@@ -61,10 +61,10 @@ main{
     width: 65px;
     
 }
-.more{
-    width: 200px;
-}
-
+.more-button{
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+ }
 
 @media(max-width:350px){
     .statistics-container{

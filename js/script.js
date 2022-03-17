@@ -42,6 +42,7 @@ async function getResponse(poke){
     await getResponseAsJson(poke);
     checkPokemon();
 }
+
 async function getResponseAsJson(poke){
     let url = `https://pokeapi.co/api/v2/pokemon/${poke}`;
     let response = await fetch(url);
@@ -271,11 +272,6 @@ async function showFavorite(id){
 function save(){
     let favorites_text = JSON.stringify(favorites);
     localStorage.setItem("favorites",favorites_text);
-}
-
-function start(){
-    load();
-    includeHTML();
 }
 
 function load(){
